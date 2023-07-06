@@ -20,14 +20,8 @@ const second = (val) => {
  * Make sure you don't delete the 'export const handlePromise'
  */
 
-// Refactor the following code...
-export const handlePromise = first();
-const secondPromise = handlePromise.then((val) => val);
-const final = secondPromise.then((res) => second(res));
-final.then((val) => {
-  console.log(val);
-  return val;
-});
+
+export const handlePromise = first().then((val) => second(val));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"

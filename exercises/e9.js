@@ -13,6 +13,10 @@
 
 export function iterate(arg) {
   // Your code goes here...
+  if (Number.isInteger(arg)) {
+    console.log(arg);
+    return arg + 1;
+  }
   
 }
 
@@ -24,6 +28,7 @@ export function iterate(arg) {
 
 export function alwaysThrows() {
   // Your code goes here...
+  throw Error("OH NOES");
 
 }
 
@@ -36,9 +41,13 @@ export function alwaysThrows() {
  * The function must be exported
  */
 
-export function onReject() {
+export function onReject(arg) {
   // Your code goes here...
-
+  if (typeof arg === 'object' && arg !== null) {
+    console.log(arg.message);
+  } else {
+    console.log(arg)
+  }
 }
 
 /**
@@ -63,7 +72,18 @@ export function onReject() {
  */
 
 // Your code goes here...
-export const promise;
+export const promise = Promise.resolve(iterate(1))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then((number) => iterate(number))
+  .then(() => alwaysThrows())
+  .catch((error) => onReject(error));
 
 
 
