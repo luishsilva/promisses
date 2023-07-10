@@ -57,9 +57,9 @@ const getData = fetch(usersUrl);
 // Your code goes here ...
 export const result = getData
   // resolve into JS array after fetch has resolved
-  .then(resolved => resolved.json())
+  .then((resolved) => resolved.json())
   // log and return the JS array
-  .then(data => {
+  .then((data) => {
     console.log(getLoginList(data))
     return getLoginList(data);
   })

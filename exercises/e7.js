@@ -23,8 +23,7 @@ export function parsePromised(json_string) {
   // Your code goes here...
   return new Promise((resolve, reject) => {
     try {
-      const parsedJson = JSON.parse(json_string);
-      resolve(parsedJson);
+      resolve(JSON.parse(json_string));
     } catch (error) {
       reject(error);
     }

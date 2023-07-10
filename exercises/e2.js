@@ -36,7 +36,7 @@ export const getPromise = (param) => {
 
 export const handlePromise = (promise) => {
   return promise.then(
-    (resolved) => resolved,
+    (val) => val,
     () => 'Uh Oh'
   );
 };

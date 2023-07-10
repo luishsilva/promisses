@@ -39,10 +39,9 @@ export const getPromise = (val) => {
 export const updateSumValue = () => {
   // Your code goes here...
   let sum = 2;
-  const promise = getPromise(120); // Promise constructor with the fulfill function>
-  promise.then((promiseVal) => {
-    sum += promiseVal + sum;
-  });
+  getPromise(120).then((promiseVal) => {
+      sum += promiseVal;
+    });
   return sum + 8;
 };
 

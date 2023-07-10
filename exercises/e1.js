@@ -20,9 +20,7 @@
   setTimeout(() => {
     resolve('The PROMISE was RESOLVED');
   }, 1000);
- });
-
- getPromise.then((value) => {
+ }).then((value) => {
   console.log(value);
   return value;
  });
