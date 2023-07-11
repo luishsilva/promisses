@@ -43,7 +43,7 @@ export function alwaysThrows() {
 
 export function onReject(arg) {
   // Your code goes here...
-  if (typeof arg === 'object' && arg.message && arg !== null) {
+  if (arg.message) {
     console.log(arg.message);
   } else {
     console.log(arg)

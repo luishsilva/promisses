@@ -23,7 +23,10 @@ const second = (val) => {
 
 export const handlePromise = first()
   .then((res) => second(res))
-  .then((val) => val);
+  .then((val) => {
+    console.log(val);
+    return val;
+  });
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-4"
